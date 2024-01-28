@@ -1,0 +1,36 @@
+# Presidential Election Poll Analysis in R
+
+# Data
+Name <- c("Jeb", "Donald", "Ted", "Marco", "Carly", "Hillary", "Bernie")
+ABC_poll_results <- c(4, 62, 51, 21, 2, 14, 15)
+CBS_poll_results <- c(12, 75, 43, 19, 1, 21, 19)
+
+# Combine data into a data frame
+election_data <- data.frame(Name, ABC_poll_results, CBS_poll_results)
+
+# Calculate average poll results
+election_data$Average_poll_results <- rowMeans(election_data[, c("ABC_poll_results", "CBS_poll_results")])
+
+# Find the winner in each poll
+election_data$Winner_ABC <- election_data$Name[which.max(election_data$ABC_poll_results)]
+election_data$Winner_CBS <- election_data$Name[which.max(election_data$CBS_poll_results)]
+
+# Blog-like summary
+cat("## Presidential Election Poll Analysis\n\n")
+cat("In this analysis, we examine the fictional presidential election poll results gathered from ABC and CBS sources.\n\n")
+
+# Display average poll results
+cat("### Average Poll Results\n\n")
+print(election_data[, c("Name", "Average_poll_results")])
+
+# Display winners in each poll
+cat("\n### Winners in Each Poll\n\n")
+cat("Winner in ABC poll: ", election_data$Winner_ABC, "\n")
+cat("Winner in CBS poll: ", election_data$Winner_CBS, "\n\n")
+
+# Conclusion
+cat("In conclusion, while the results are entirely fictional and do not reflect any real election outcomes, it's interesting to see how the candidates performed in the imaginary ABC and CBS polls. Keep in mind that polls are subject to various biases and fluctuations, and these results are purely for the sake of this fictional analysis.\n")
+### Winners in Each Poll
+
+Winner in ABC poll: Donald
+Winner in CBS poll: Donald
