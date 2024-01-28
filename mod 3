@@ -29,8 +29,6 @@ cat("Winner in ABC poll: ", election_data$Winner_ABC, "\n")
 cat("Winner in CBS poll: ", election_data$Winner_CBS, "\n\n")
 
 # Conclusion
-cat("In conclusion, while the results are entirely fictional and do not reflect any real election outcomes, it's interesting to see how the candidates performed in the imaginary ABC and CBS polls. Keep in mind that polls are subject to various biases and fluctuations, and these results are purely for the sake of this fictional analysis.\n")
-### Winners in Each Poll
 
 Winner in ABC poll: Donald
 Winner in CBS poll: Donald
