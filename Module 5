@@ -1,0 +1,30 @@
+# Define matrices A and B
+A <- matrix(1:100, nrow=10)
+B <- matrix(1:1000, nrow=10)
+
+# Calculate the determinant of matrix A
+det_A <- det(A)
+print(paste("Determinant of matrix A:", det_A))
+
+# Calculate the determinant of matrix B
+det_B <- det(B)
+print(paste("Determinant of matrix B:", det_B))
+
+# Calculate the inverse of matrix A
+inv_A <- solve(A)
+print("Inverse of matrix A:")
+print(inv_A)
+
+# Calculate the inverse of matrix B
+inv_B <- solve(B)
+print("Inverse of matrix B:")
+print(inv_B)
+
+[1] "Determinant of matrix A: 0"
+[1] "Determinant of matrix B: 0"
+[1] "Inverse of matrix A:"
+Error in solve.default(A) : 
+  system is computationally singular: reciprocal condition number = 1.13548e-33
+[1] "Inverse of matrix B:"
+Error in solve.default(B) : 
+  system is computationally singular: reciprocal condition number = 2.73451e-18
