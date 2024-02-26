@@ -1,0 +1,11 @@
+import pandas as pd
+
+# Create a simple dataset
+data = {
+    'Name': ['John', 'Anna', 'Peter', 'Linda', 'Tom'],
+    'Age': [25, 30, 35, 40, 45],
+    'Gender': ['Male', 'Female', 'Male', 'Female', 'Male']
+}
+
+df = pd.DataFrame(data)
+print(df)
