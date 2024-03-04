@@ -1,0 +1,37 @@
+# Load required packages
+install.packages("plyr")
+library(plyr)
+
+# Read the data
+Student_assignment_6 <- read.table("assignment_6_data.txt", header = TRUE)
+
+# Check the data
+print(Student_assignment_6)
+
+# Calculate mean grade for each sex category
+StudentAverage <- ddply(Student_assignment_6, .(Sex), summarise, Grade_Average = mean(Grade))
+
+# Print the calculated mean
+print(StudentAverage)
+
+# Write the output to a file
+write.table(StudentAverage, "mean_grade_by_sex.txt", sep = ",", quote = FALSE, row.names = FALSE)
+
+# Filter the original dataset to include only rows with names containing the letter 'i'
+i_students <- subset(Student_assignment_6, grepl("i", Name, ignore.case = TRUE))
+
+# Convert to dataframe
+i_students_df <- as.data.frame(i_students)
+
+# Write the names of the students to a CSV file
+write.table(i_students_df$Name, "i_students_names.csv", sep = ",", quote = FALSE, row.names = FALSE)
+
+# Filter the original dataset to include only rows with names containing the letter 'i'
+i_students <- subset(Student_assignment_6, grepl("i", Name, ignore.case = TRUE))
+
+# Choose file path to save the CSV file
+file_path <- file.choose()
+
+# Write the filtered dataset to a CSV file
+write.csv(i_students, file = file_path, row.names = FALSE)
+
