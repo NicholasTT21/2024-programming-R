@@ -1,0 +1,44 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the data into a DataFrame
+data = {
+    "Year": [1970, 1970.25, 1970.5, 1970.75, 1971, 1971.25, 1971.5, 1971.75, 1972, 1972.25, 1972.5, 1972.75, 1973, 1973.25, 1973.5, 1973.75, 1974, 1974.25, 1974.5, 1974.75, 1975, 1975.25, 1975.5, 1975.75, 1976, 1976.25, 1976.5, 1976.75, 1977, 1977.25, 1977.5, 1977.75, 1978, 1978.25, 1978.5, 1978.75, 1979, 1979.25, 1979.5, 1979.75, 1980, 1980.25, 1980.5, 1980.75, 1981, 1981.25, 1981.5, 1981.75, 1982, 1982.25, 1982.5, 1982.75, 1983, 1983.25, 1983.5, 1983.75, 1984, 1984.25, 1984.5, 1984.75, 1985, 1985.25, 1985.5, 1985.75, 1986, 1986.25, 1986.5, 1986.75, 1987, 1987.25, 1987.5, 1987.75, 1988, 1988.25, 1988.5, 1988.75, 1989, 1989.25, 1989.5, 1989.75],
+    "Value": [1.01, 1.06, 1.13, 1.24, 1.33, 1.45, 1.64, 1.77, 2.24, 2.58, 2.92, 3.2, 4.26, 4.89, 4.94, 5.15, 5.19, 5.57, 6, 6.92, 8.22, 10.57, 19.53, 28.56, 45.68, 85.61, 101.12, 131.67, 171.96, 209.93, 267.05, 355.82, 466.84, 606.61, 744, 950.91, 1255.96, 1560.66, 1999.51, 2367.83, 2805.64, 3328.89, 3818.9, 4469.26, 5115.07, 6297.67, 8125.88, 9952.58, 12659.68, 14482.68, 20789.88, 30153.65, 43626.3, 59885.82, 91200.11, 151820.8, 238465, 394707.2, 688803.6, 1196314, 2180880, 4484544, 6170733, 6608855, 7194400, 8140463, 9834494, 11798442, 14267856, 16727634, 22297936, 32220516, 41661128, 64616412, 116430000, 155770000, 203130000, 679960000, 4537300000, 6611700000]
+}
+
+df = pd.DataFrame(data)
+
+# Visualization 1: Line Plot
+plt.figure(figsize=(10, 6))
+plt.plot(df['Year'], df['Value'], marker='o', linestyle='-')
+plt.title('Value Over Time')
+plt.xlabel('Year')
+plt.ylabel('Value')
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+# Visualization 2: Bar Plot (Sampled)
+sampled_df = df[df['Year'].astype(int) % 5 == 0]  # Sample every 5 years for better visibility
+plt.figure(figsize=(10, 6))
+plt.bar(sampled_df['Year'], sampled_df['Value'], color='skyblue')
+plt.title('Value Over Time (Sampled)')
+plt.xlabel('Year')
+plt.ylabel('Value')
+plt.grid(axis='y')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+# Visualization 3: Scatter Plot
+plt.figure(figsize=(10, 6))
+plt.scatter(df['Year'], df['Value'], color='green')
+plt.title('Value Over Time')
+plt.xlabel('Year')
+plt.ylabel('Value')
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
