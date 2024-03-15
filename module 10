@@ -1,0 +1,8 @@
+Package: Friedman
+Title: Friedman: A package for statistical analysis based on Friedman's tests
+Version: 0.1.0.9000
+Authors@R: "John Doe <john.doe@example.com> [aut, cre]"
+Description: Provides functions for conducting statistical analysis based on Friedman's test, a non-parametric test used to determine whether there are statistically significant differences between the means of three or more groups. The package includes tools for data preparation, conducting the test, and post-hoc analysis.
+Depends: R (>= 3.1.2)
+License: CC0
+LazyData: true
