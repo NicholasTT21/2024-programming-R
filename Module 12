@@ -1,0 +1,19 @@
+generate_plot <- function(x, y, type = 'scatter') {
+  if (type == 'scatter') {
+    plot(x, y, main = "Scatter Plot", xlab = "X-axis", ylab = "Y-axis", col = "blue", pch = 16)
+  } else if (type == 'line') {
+    plot(x, y, main = "Line Plot", xlab = "X-axis", ylab = "Y-axis", col = "red", type = 'l')
+  } else {
+    stop("Invalid plot type. Please choose either 'scatter' or 'line'.")
+  }
+}
+
+# Example usage
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 3, 5, 7, 11)
+
+# Scatter plot
+generate_plot(x, y, type = 'scatter')
+
+# Line plot
+generate_plot(x, y, type = 'line')
